@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('phone', 20);
             $table->string('address', 255);
             $table->string('city', 100);
+            $table->date('birth_date');
             $table->timestamps();
         });
     }

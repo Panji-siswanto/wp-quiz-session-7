@@ -38,23 +38,16 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LectureSeeder::class,
         ]);
-
-
-
-
         
-        //Create 10 Students first via factory
-        $students = Student::factory(10)->create();
-
-        foreach ($students as $student) {
-            // Create 1 Profile for each student
+        $lectureIds = Lecture::pluck('id')->toArray();
+        //Create  10 Student & Profile & attach 2-3 lectures
+        Student::factory(10)->create()->each(function (Student $student) use ($faker, $lectureIds) {
             Profile::factory()->create([
                 'student_id' => $student->id,
             ]);
 
-            // B. Attach 2 random Lecture IDs (from IDs 1..6) to this student (Many-to-Many)
-            $randomLectureIds = $faker->randomElements([1, 2, 3, 4, 5, 6], 2);
-            $student->lectures()->attach($randomLectureIds);
-        }
+            $randomLectures = $faker->randomElements($lectureIds, $faker->numberBetween(2, 3));
+            $student->lectures()->attach($randomLectures);
+        });
     }
 }

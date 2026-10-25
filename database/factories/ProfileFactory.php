@@ -17,10 +17,11 @@ class ProfileFactory extends Factory
     {
         return [
             'student_id' => Student::factory(),
-            'phone'      => $this->faker->phoneNumber(),
+            // 'phone'      => $this->faker->phoneNumber(),
+            'phone' => $this->faker->numerify('+628##########'),
             'address'    => $this->faker->streetAddress(),
             'city'       => $this->faker->city(),
-            'birth_date' => $this->faker->dateTimeBetween('-23 years', '-18 years')->format('Y-m-d'),
+            'birth_date' => $this->faker->dateTimeBetween('-25 years', '-17 years')->format('Y-m-d'),
         ];
     }
 }

@@ -16,7 +16,8 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'nim'      => $this->faker->unique()->numerify('2602####'),
+            // 'nim'      => $this->faker->unique()->numerify('2#02######'),
+            'nim' => $this->faker->unique()->regexify('(2[4-9]|30)02[0-9]{6}'),
             'name'     => $this->faker->name(),
             'major_id' => Major::inRandomOrder()->value('id') ?? 1,
         ];

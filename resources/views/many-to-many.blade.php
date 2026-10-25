@@ -4,14 +4,14 @@
 
 @section('content')
 <div class="card p-4">
-    <h5 class="text-center fw-bold mb-4">Laravel Eloquent Relationship : Many To Many (Student &amp; Lectures)</h5>
+    <h5 class="text-center fw-bold mb-4">Many To Many</h5>
 
     <table class="table table-bordered table-striped mb-0">
         <thead>
             <tr>
                 <th>Student Name</th>
                 <th>Major</th>
-                <th>Enrolled Lectures (Courses)</th>
+                <th>Enrolled Courses</th>
             </tr>
         </thead>
         <tbody>

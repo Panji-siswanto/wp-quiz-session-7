@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="card p-4">
-    <h5 class="text-center fw-bold mb-4">Laravel Eloquent Relationship : One To One (Student &amp; Profile)</h5>
+    <h5 class="text-center fw-bold mb-4">One to One</h5>
 
     <table class="table table-bordered table-striped mb-0">
         <thead>

@@ -15,7 +15,11 @@
         <li class="nav-item">
         <a class="nav-link {{ request()->is('many-to-many') ? 'active fw-bold' : '' }}" href="{{ url('/many-to-many') }}">many to Many</a>
         </li>
-      
+        <li class="nav-item">
+          <a class="nav-link {{ request()->is('article') ? 'active fw-bold' : '' }}" href="{{ url('/article') }}">
+              Article
+          </a>
+        </li>
       </ul>
     </div>
   </div>

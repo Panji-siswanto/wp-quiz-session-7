@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'student_id', 
         'phone', 
@@ -14,8 +16,7 @@ class Profile extends Model
         'birth_date'
     ];
 
-    // 1 Profile belongs to 1 Student (1-1)
-    public function student()
+    public function student()// 1 Profile belongs to 1 Student (1-1)
     {
         return $this->belongsTo(Student::class);
     }
